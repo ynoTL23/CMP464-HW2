@@ -6,6 +6,10 @@ class LinkContainer extends React.Component {
   constructor(props) {
     super(props)
     /* TODO - Create state object for storing favLinks */
+
+    this.state = {
+      favLinks: []
+    }
   }
 
   removeCharacter = index => {
@@ -22,7 +26,7 @@ class LinkContainer extends React.Component {
         <h1>My Favorite Links</h1>
         <p>Add a new url with a name and link to the table.</p>
         {/*TODO - Add Table Component */}
-        <Table />
+        <Table linkData={this.state.favLinks} />
 
         <br />
 

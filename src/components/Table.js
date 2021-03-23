@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'react-dom'
 
 const TableHeader = () => {
   // boilerplate table header functional component
@@ -41,7 +40,7 @@ const Table = props => {
     return (
       <table>
         <TableHeader />
-        <TableBody linkData={[]} />
+        <TableBody linkData={props.linkData} />
       </table>
     )
   }
