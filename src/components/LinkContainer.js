@@ -1,6 +1,6 @@
 import React from 'react'
 import Table from './Table'
-// import Form from './Form';
+import Form from './Form'
 
 class LinkContainer extends React.Component {
   constructor(props) {
@@ -18,6 +18,7 @@ class LinkContainer extends React.Component {
 
   handleSubmit = favLink => {
     /* TODO - Create logic to setState and add new favLink to favLinks array in state */
+    this.setState({ favLinks: [...this.state.favLinks, favLink] })
   }
 
   render() {
@@ -32,6 +33,7 @@ class LinkContainer extends React.Component {
 
         <h3>Add New</h3>
         {/*TODO - Add Form Component */}
+        <Form addLink={this.handleSubmit} />
       </div>
     )
   }
