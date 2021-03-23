@@ -14,6 +14,9 @@ class LinkContainer extends React.Component {
 
   removeCharacter = index => {
     /* TODO - Create logic for setting the state to filter array and remove favLink at index */
+    this.setState(prevState => ({
+      favLinks: prevState.favLinks.filter((link, idx) => idx !== index)
+    }))
   }
 
   handleSubmit = favLink => {
@@ -27,7 +30,7 @@ class LinkContainer extends React.Component {
         <h1>My Favorite Links</h1>
         <p>Add a new url with a name and link to the table.</p>
         {/*TODO - Add Table Component */}
-        <Table linkData={this.state.favLinks} />
+        <Table linkData={this.state.favLinks} removeLink={this.removeCharacter} />
 
         <br />
 
